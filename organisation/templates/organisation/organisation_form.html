@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="section-header text-center">
+  <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Organisation management</h2>
+  <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+</div>
+
+
+<div class="container1">
+          
+
+  <form method="post" id="sForm" data-courses-url="{% url 'load_courses' %}" novalidate >
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button type="submit">Save</button>
+    
+  </form>
+</div>
+
+{% endblock %}

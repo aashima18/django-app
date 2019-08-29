@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="section-header text-center">
+  <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Courses management</h2>
+  <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+</div>
+
+
+<div class="container1">
+          
+
+  <form method="post" id="sForm" action="" >
+    {% csrf_token %}
+    <label for="lname">name</label>
+    <input type="text" id="name" name="name">
+
+    
+    <button type="submit">Save</button>
+    
+  </form>
+</div>
+
+{% endblock %}

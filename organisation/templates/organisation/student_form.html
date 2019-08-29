@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="section-header text-center">
+  <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Organisation management</h2>
+  <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+</div>
+
+
+<div class="container1">
+          
+
+  <form method="post" id="sForm" data-courses-url="{% url 'load_courses' %}" novalidate >
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button type="submit">Save</button>
+    
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#id_organisation").change(function () {
+      var url = $("#sForm").attr("data-courses-url");
+      var organisationId = $(this).val();
+      $.ajax({
+        url: url,
+        data: {
+          'organisation': organisationId
+        },
+        success: function (data) {
+          $("#id_courses").html(data);
+        }
+      });
+    });
+  </script>
+  </div>
+
+{% endblock %}

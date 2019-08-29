@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+<div class="section-header text-center">
+    <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Category Management</h2>
+    <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+  </div>
+
+
+<div class="container1">
+        <form action="{% url 'search2_results' %}" method="get">
+                <input name="q" type="text" placeholder="Search...">
+              </form>      
+                     
+
+        <table id="customers">
+            <tr>
+                
+                <th>courses</th>
+                <th>Organisation</th>
+                <th>Student</th>
+               
+            </tr>
+            {% for Student in dta %}
+            <tr>
+                <td style="color: black">{{ Student.courses}}</td>
+                <td style="color: black">{{ Student.organisation}}</td>
+                <td style="color: black">{{ Student.name}}</td>
+               
+            </tr>
+            {% endfor %}
+        </table>
+      
+   
+        {% endblock %}

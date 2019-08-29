@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="section-header text-center">
+  <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Organisation management</h2>
+  <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+</div>
+
+
+<div class="container1">
+          
+  
+  <table id="customers">
+    <tr>
+        <th>Students</th>
+        
+        <th>Courses</th>
+        <!-- <th>Update</th> -->
+       
+    </tr>
+    {% for student in people %}
+    <tr>
+        <td style="color: black">{{ student.name }}</td>
+       
+        <td><a href="{% url 'courses' student.id%}"><button type="submit" >click to courses</button></a></td>
+       
+    </tr>
+    
+    {% endfor %}
+</table>
+<a href="{% url 'add' %}"><button type="submit" style="margin:50px 250px;background-color: #4CAF50;color: white;padding: 12px 20px;border: none;">create student</button></a>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: amiymahajan77@gmail.com
+Date: Fri, 05 Jul 2019 11:38:18 -0000
+Message-ID: <156232669846.2978.4040053057669553019@MSDT035>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/reset/NDU/57r-ff4d3e8e66a4e0e69edf/
+
+Your username, in case you've forgotten: diksha
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

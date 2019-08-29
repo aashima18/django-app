@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+<div class="section-header text-center">
+    <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Category Management</h2>
+    <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+  </div>
+
+
+<div class="container1">
+            
+
+        <table id="customers">
+            <tr>
+                
+                <th>organisation</th>
+               
+            </tr>
+            {% for organis in dataa %}
+            <tr>
+                <td style="color: black">{{ organis.organisation}}</td>
+                
+                
+            </tr>
+            {% endfor %}
+        </table>
+      
+   
+        {% endblock %}

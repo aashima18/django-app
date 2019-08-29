@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+
+  </head>
+  <body>
+
+
+<div class="container">
+        <div class="section-header text-center">          
+          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Awesome Features</h2>
+          <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            <div class="content-left">
+                {% for Features in itemss %}
+              <div class="box-item wow fadeInLeft" data-wow-delay="0.3s">
+                <span class="icon">
+                  <i class={{Features.icons}}></i>
+                </span>
+                <div class="text">
+                  <h4>{{Features.Title}}</h4>
+                  <p>{{Features.des}}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% for Featuresimg in itmss %}
+          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            <div class="show-box wow fadeInUp" data-wow-delay="0.3s">
+              <img src="{{Featuresimg.img.url}}" alt="">
+            </div>
+          </div>
+          {% endfor %}
+          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            <div class="content-right">
+                {% for Featuresrght in a %}
+              <div class="box-item wow fadeInRight" data-wow-delay="0.3s">
+                <span class="icon">
+                  <i class={{Featuresrght.icons}}></i>
+                </span>
+                <div class="text">
+                  <h4>{{Featuresrght.Title}}</h4>
+                  <p>{{Featuresrght.des}}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+      
+  </body>
+</html>

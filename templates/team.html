@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+  </head>
+  <body>
+      <div class="container">
+          <div class="section-header text-center">          
+            <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Meet our team</h2>
+            <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+          </div>
+          <div class="row">
+              {% for Team in dta %}
+            <div class="col-lg-6 col-md-12 col-xs-12">
+              <!-- Team Item Starts -->
+<!-- Team Item Starts -->
+
+<div class="team-item wow fadeInRight" data-wow-delay="0.2s">
+        <div class="team-img">
+          <img class="img-fluid" src="{{ Team.img1.url}}" alt="">
+        </div>
+        <div class="contetn">
+          <div class="info-text">
+            <h3><a href="#">{{Team.name1}}</a></h3>
+            <p>{{Team.Title1}}</p>
+          </div>
+          <p>{{Team.des1}}</p>
+          <ul class="social-icons">
+            <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Team Item Ends -->
+      
+    </div>
+    {% endfor %}
+  </div>
+</div>
+     
+
+  </body>
+</html>

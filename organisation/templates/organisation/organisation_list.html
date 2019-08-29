@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="section-header text-center">
+  <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Organisation management</h2>
+  <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+</div>
+
+
+<div class="container1">
+  <form action="{% url 'search_results' %}" method="get">
+    <input name="q" type="text" placeholder="Search...">
+  </form>      
+  
+  <table id="customers">
+    <tr>
+        <th>Organisation</th>
+        
+        <th>ADD Courses</th>
+        
+        <!-- <th>Update</th> -->
+       
+    </tr>
+    {% for organis in org %}
+    <tr>
+        <td style="color: black">{{ organis.name }}</td>
+        <td><a href="{% url 'cou' organis.id %}"><button type="submit" >Add courses</button></a></td>
+        
+       
+    </tr>
+    
+    {% endfor %}
+</table>
+
+
+{% endblock %}

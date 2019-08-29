@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="section-header text-center">
+  <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Search Results</h2>
+  <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+</div>
+<div class="container1">
+
+<table id="customers">
+    <tr>
+        <th>Organisation</th>
+        
+        <th>ADD Courses</th>
+        
+        
+       
+    </tr>
+  {% for Organisation in object_list %}
+  <tr> 
+      <td style="color: black">{{ Organisation.name }}</td>
+      <td><a href="{% url 'cou' Organisation.id %}"><button type="submit" >Add courses</button></a></td>
+</tr>
+   
+  {% endfor %}
+</table>
+</div>
+
+{% endblock %}

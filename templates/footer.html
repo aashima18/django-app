@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+  </head>
+  <body>
+    
+<div class="container">
+        <div class="container">
+          <div class="row">
+              {% for Footer1 in itms %}
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <div class="widget">
+                <h3 class="footer-logo"><img src="{{ Footer1.img5.url}}" alt=""></h3>
+                <div class="textwidget">
+                  <p>{{Footer1.p}}</p>
+                </div>
+                <div class="social-icon">
+                  <a class="facebook" href="#"><i class="lni-facebook-filled"></i></a>
+                  <a class="twitter" href="#"><i class="lni-twitter-filled"></i></a>
+                  <a class="instagram" href="#"><i class="lni-instagram-filled"></i></a>
+                  <a class="linkedin" href="#"><i class="lni-linkedin-filled"></i></a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            {% for Footer in itm %}
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <h3 class="footer-titel">{{Footer.h}}</h3>
+              <ul class="footer-link">
+                <li><a href="#">{{Footer.d|linebreaksbr}}</a></li>         
+              </ul>
+            </div>
+            {% endfor %}
+
+            {% for FooterConatct in it %}
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <h3 class="footer-titel">{{FooterConatct.h}}</h3>
+              <ul class="address">
+                <li>
+                  <a href="#"><i class="lni-map-marker"></i> {{FooterConatct.address|linebreaksbr}}</a>
+                </li>
+                <li>
+                  <a href="#"><i class="lni-phone-handset"></i> P:{{FooterConatct.phono}}</a>
+                </li>
+                <li>
+                  <a href="#"><i class="lni-envelope"></i>E:{{FooterConatct.email}}</a>
+                </li>
+              </ul>
+            </div>
+            {% endfor %}
+
+          </div>
+        </div>  
+      </div> 
+      <div id="copyright">
+        <div class="container">
+          <div class="row">
+              {% for Copyright in its %}
+            <div class="col-md-12">
+              <div class="copyright-content">
+                <p>{{Copyright.title}} <a rel="nofollow" href="{{Copyright.link.url}}">{{Copyright.name}}</a> All Right Reserved</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>   
+       
+      
+  </body>
+</html>

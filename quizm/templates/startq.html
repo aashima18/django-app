@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+<div class="section-header text-center">
+    <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Start quiz</h2>
+    <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+  </div>
+
+
+<div class="container1" style="color: black">
+   All the best {{ user }}!
+    <p><a href="{%url 'logout' %}">logout</a></p>
+
+    <form action = "" method = "POST" >
+             
+     <div class = 'question'>Question : {{ question.questions }} </div><br>
+     <div id= "choices" class='select'>
+      <input type = "radio" name="ans" value="{{question.choice_one}}">{{question.choice_one}}<br>
+      <input type = "radio" name="ans" value="{{question.choice_two}}">{{question.choice_two}}<br>
+      <input type = "radio" name="ans" value="{{question.choice_three}}">{{question.choice_three}}<br>
+      <input type = "radio" name="ans" value="{{question.choice_four}}">{{question.choice_four}}<br>
+      
+      <br> 
+      
+          
+      {% csrf_token %}
+    </form>
+    <a href="{% url 'questions' %}?ans"></a><button type="submit">Next</button></a></td>  
+    <a href="{% url 'answers' %}"></a><button type="submit">submit</button></a></td>  
+    <!-- <div style="text-align:center"><input style="padding: 10px 35px;font-size:120%;cursor: pointer;" type="submit" class="submit" id="submit" value="Submit"/></div> -->
+     
+    
+     
+    </div>
+</div>
+{% endblock %}

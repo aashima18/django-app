@@ -1,0 +1,39 @@
+
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+<div class="section-header text-center">
+    <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Category Management</h2>
+    <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+  </div>
+
+
+<div class="container1">
+  
+  <form method="POST" action="{% url 'categorys' %}">
+    {% csrf_token %}
+   {{ form.as_p }}
+    <label for="fname">Title</label>
+    <input type="text" id="title" name="title" placeholder="Your title.." required>
+
+    <label for="lname">Url</label>
+    <input type="text" id="url" name="url" placeholder="url" required>
+
+    <label for="parentid">parentid</label>
+    <select name="parentid">
+        <option value="">none</option>
+      {% for Category in items %}
+      <option value="{{ Category.id }}">{{ Category.title }}</option>
+      {% endfor %}
+    </select>
+    <label for="subject">Description</label>
+    <textarea id="subject" name="description" placeholder="Write something.."  required></textarea>
+
+    
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+{% endblock %}

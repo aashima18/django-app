@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+  </head>
+  <body>
+
+<div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-xs-12 info">
+            <div class="about-wrapper wow fadeInLeft" data-wow-delay="0.3s">
+              <div>
+                  {% for About in data %}
+                <div class="site-heading">
+                  <p class="mb-3">{{ About.P1}}</p>
+                  <h2 class="section-title">{{ About.Tittle }}</h2>
+                </div>
+                <div class="content">
+                  <p>
+                      {{ About.description }} 
+                  </p>
+                  <a href="#" class="btn btn-common mt-3">Read More</a>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-xs-12 wow fadeInRight" data-wow-delay="0.3s">
+            <img class="img-fluid" src="{{ About.image.url}}" alt="" >
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   
+      
+  </body>
+</html>
